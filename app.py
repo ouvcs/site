@@ -72,6 +72,3 @@ def after(response):
 @app.errorhandler(HTTPException)
 def error(e):
     return render_template("/specific/error.html", error=str(e.code), description=HTTP_STATUS_CODES[e.code])
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
