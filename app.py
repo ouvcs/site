@@ -37,10 +37,6 @@ def index():
     else:
         return redirect("/countries")
 
-@app.route("/error/")
-def error():
-    abort(418)
-
 @app.route("/map/")
 def map():
     return render_template("/map/map.html")
@@ -48,6 +44,10 @@ def map():
 @app.route("/markdown/")
 def markdown():
     return render_template("/markdown/markdown.html")
+
+@app.route("/error/")
+def error():
+    abort(418)
 
 
 @app.before_request
