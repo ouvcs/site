@@ -1,0 +1,73 @@
+input, textarea, select {
+    text-align: center;
+    background: none;
+    background-color: var(--cl-d);
+    border: 0vh;
+    color: var(--cl-r);
+    border-radius: 20px;
+    padding: 0.5vh 0vw;
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+textarea {
+    text-align: start;
+}
+
+select {
+    border: 0px;
+}
+
+input:invalid {
+    background-color: #c55959
+}
+
+body.dark input:invalid {
+    background-color: #553030;
+}
+
+input:valid {
+    background-color: var(--cl-d);
+}
+
+::placeholder {
+    color: var(--cl-o);
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+#valute-name-input {
+    font-size: 1.3em;
+    width: 20vw;
+}
+
+#valute-photo {
+    margin-bottom: 1vh;
+    background-size: cover;
+    background-blend-mode: soft-light;
+}
+
+#valute-description-input {
+    resize: none;
+    height: 35vh;
+    padding-left: 1vw;
+    width: 23vw;
+}
+
+#submit {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 1vh;
+    margin-right: 1vh;
+    background-color: var(--cl-h);
+    padding: 2vh 1vw;
+    color: var(--cl-a);
+    cursor: pointer;
+}
+
+#submit:hover {
+    border-radius: 10px;
+}
+
+#valute-abbreviation-input, #valute-valute-input {
+    background-color: var(--cl-e);
+}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Валюты{% endblock %}
+
+{% block links %}
+<link rel="stylesheet" href="/static/css/valutes/valutes-m.css">
+{% endblock %}
+
+{% block body %}
+{%for valute in valutes %}
+    <div class="valute" style="transform: scale(0);">
+        <img src="{{ valute['photo'] }}" class="valute-photo">
+        <div class="valute-info">
+            <div class="valute-name">
+                <span>{{ valute['name'] }}</span>
+                <img src="/static/images/check/{{ valute['check'] }}.png?ver={{ VERSION }}" alt="Check" class="check">
+                <div class="valute-add">{{ valute['add']|safe }}</div>
+            </div>
+            <div class="valute-change-wrapper"><div class="valute-abbreviation">{{ valute['abbreviation'] }}/RUB</div><div class="valute-change">{{ valute['change'] }}</div></div>
+            <div class="valute-description">{{ valute['desc']|safe }}</div>
+            <a class="valute-about" href="/valutes/valute/{{ valute['vid'] }}">Подробнее</a>
+        </div>
+    </div>
+{% endfor %}
+
+<script src="/static/js/ratios.js?ver={{ VERSION }}"></script>
+<script>
+    document.querySelectorAll(".valute").forEach(function(e) {
+        if (e.getBoundingClientRect().top <= window.pageYOffset+window.innerHeight) {
+            e.style.transform = "";
+        }
+    });
+    document.body.onscroll = function() {
+        document.querySelectorAll(".valute").forEach(function(e) {
+            if (e.getBoundingClientRect().top <= window.pageYOffset+window.innerHeight) {
+                e.style.transform = "";
+            }
+        });
+    };
+</script>
+{% endblock %}

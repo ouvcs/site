@@ -1,0 +1,43 @@
+#wrapper {
+    margin-left: 50px;
+    padding-bottom: 10vh;
+}
+
+.markdown-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.markdown-code {
+    padding: 1vh;
+    border: 2.5px solid var(--cl-o);
+    border-radius: 20px;
+    margin-left: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1vh;
+    width: 40%;
+    min-height: 25vh;
+}
+
+.markdown-code code {
+    padding: 1vh 2vh;
+    border: 2.5px solid var(--cl-h);
+    border-radius: 20px;
+    width: 75%;
+    display: block;
+    background-color: var(--cl-k);
+    color: var(--cl-a);
+    font-family: monospace;
+}
+
+.markdown-description, h2 {
+    text-align: center;
+    width: 100%;
+    display: block;
+}

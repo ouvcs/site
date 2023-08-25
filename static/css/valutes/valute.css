@@ -1,0 +1,125 @@
+#wrapper {
+    width: calc(100%-4vw);
+    height: 85vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    margin: 1vh 2vw;
+    color: var(--cl-p);
+}
+
+#valute-side {
+    width: 25%;
+    height: 80vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--cl-w);
+    padding: 1%;
+    border-radius: 20px;
+}
+
+#valute-photo {
+    border-radius: 20px;
+    width: 90%;
+    background-size: cover;
+    border: 2.5px solid var(--cl-y);
+    aspect-ratio: 2/1;
+}
+
+#valute-id {
+    color: var(--cl-i);
+} 
+
+#valute-ruler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1% 0%;
+}
+
+#valute-ruler-photo {
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    margin-right: 3vw;
+}
+
+#valute-ruler-name {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+#valute-ruler-name div {
+    font-weight: bold;
+}
+
+#valute-info {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+#valute-date, #valute-goverment, #valute-political-type, #valute-ideology {
+    font-size: 0.95em;
+    margin-bottom: 1vh;
+    padding: 0.5vh 2vw;
+    background-color: var(--cl-e);
+    border-radius: 20px;
+    width: 80%;
+    height: 6.6vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+#valute-political-type div, #valute-ideology div {
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+#valute-desc-wrapper {
+    width: 68%;
+    min-height: 80vh;
+    background-color: var(--cl-q);
+    padding: 1%;
+    border-radius: 20px;
+    font-size: 0.9em;
+}
+
+#valute-name-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 0.95em;
+}
+
+#valute-name-wrapper>* {
+    margin-right: 10px;
+}
+
+#valute-name-check, #valute-add>* {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+#valute-change {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#valute-abbreviation {
+    font-weight: bold;
+}

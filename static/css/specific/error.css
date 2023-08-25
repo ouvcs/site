@@ -1,0 +1,97 @@
+@keyframes error {
+    0% {
+        color: var(--cl-error);
+    }
+    70% {
+        color: var(--cl-error);
+    }
+    80% {
+        color: var(--cl-error-hv);
+    }
+    100% {
+        color: var(--cl-error);
+    }
+}
+
+#error {
+    width: 100%;
+    height: 87vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+#error-code {  
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    color: var(--cl-error);
+    cursor: default;
+    transition: height 1s, font-size 1s;
+}
+
+.error-code-element {
+    font-size: 11em;
+}
+
+.error-code-element:nth-child(1) {
+    animation: error 5s 0s infinite ease-in-out;
+}
+
+.error-code-element:nth-child(2) {
+    animation: error 5s 1s infinite ease-in-out;
+}
+
+.error-code-element:nth-child(3) {
+    animation: error 5s 2s infinite ease-in-out;
+}
+
+#error-code:hover .error-code-element {
+    animation: none;
+}
+
+.error-code-element:hover {
+    color: var(--cl-error-hv);
+}
+
+#error-under {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.error-message {
+    font-size: 6em;
+    color: var(--cl-error);
+    margin: 15vh 0vw;
+}
+
+.error-message:hover {
+    color: var(--cl-error-hv);
+}
+
+#error-return {
+    background-color: var(--cl-error-return);
+    padding: 20px;
+    margin-top: 15vh;
+    border-radius: 10px;
+    transition: 500ms;
+    color: var(--cl-u);
+}
+
+#error-return:hover {
+    color: var(--cl-y);
+}
+
+#error-return:hover {
+    border-radius: 20px;
+}
+
+#error-description {
+    color: var(--cl-error);
+}

@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}Markdown{% endblock %}
+
+{% block links %}
+<link rel="stylesheet" href="/static/css/markdown/markdown.css?ver={{ VERSION }}">
+{% endblock %}
+
+{% block body %}
+<h1>Markdown</h1>
+<h2>Заголовки</h2>
+<div class="markdown-wrap">
+    <div class="markdown-code"><code>#H1</code><h1>H1</h1></div>
+    <div class="markdown-code"><code>##H2</code><h2>H2</h1></div>
+    <div class="markdown-code"><code>###H3</code><h3>H3</h1></div>
+    <div class="markdown-code"><code>####H4</code><h4>H4</h1></div>
+    <div class="markdown-code"><code>#####H5</code><h5>H5</h1></div>
+    <div class="markdown-code"><code>######H6</code><h6>H6</h1></div>
+</div>
+<h2>Жирный текст</h2>
+<div class="markdown-wrap">
+    <div class="markdown-code"><code>**bold**</code><b>bold</b></div>
+</div>
+<h2>Курсивный текст</h2>
+<div class="markdown-wrap">
+    <div class="markdown-code"><code>*italic*</code><i>italic</i></div>
+</div>
+<h2>Зачеркнутый текст</h2>
+<div class="markdown-wrap">
+    <div class="markdown-code"><code>~~stroke~~</code><u>stroke</u></div>
+</div>
+<h2>Подсвеченый текст</h2>
+<div class="markdown-wrap">
+    <div class="markdown-code"><code>==hightlight==</code><mark>hightlight</mark></div>
+</div>
+<h2>Нижний текст</h2>
+<div class="markdown-wrap">
+    <div class="markdown-code"><code>H~2~O</code><div>H<sub>2</sub>O</div></div>
+</div>
+<h2>Верхний текст</h2>
+<div class="markdown-wrap">
+    <div class="markdown-code"><code>H^2^O</code><div>H<sup>2</sup>O</div></div>
+</div>
+<h2>Цитата</h2>
+<div class="markdown-wrap">
+    <div class="markdown-code"><code>> blockquote</code><blockquote>blockquote</blockquote></div>
+</div>
+<h2>Нумирируемый лист</h2>
+<div class="markdown-wrap">
+    <div class="markdown-code"><code>1. First item<br>2. Second item<br>3. Third item</code><ol><li>First item</li><li>Second item</li><li>Third item</li></ol></div>    
+</div>
+<h2>Не нумирируемый лист</h2>
+<div class="markdown-wrap">
+    <div class="markdown-code"><code>- First item<br>- Second item<br>- Third item</code><ul><li>First item</li><li>Second item</li><li>Third item</li></ul></div>
+</div>
+<h2>Код</h2>
+<div class="markdown-wrap">
+    <div class="markdown-code"><code>`code`</code><ul><code>code</code></div>
+</div>
+<h2>Линия сепарации</h2>
+<div class="markdown-wrap">
+    <div class="markdown-code"><code>---</code><hr></div>  
+</div>
+<h2>Ссылка</h2>
+<div class="markdown-wrap">
+    <div class="markdown-code"><code>[title](https://example.com/)</code><a href="https://example.com/">title</a></div>
+</div>
+<h2>Картинка</h2>
+<div class="markdown-wrap">
+    <div class="markdown-code"><code>![alt text](https://example.com/image.jpg)</code><img src="https://example.com/image.jpg/" alt="alt text"></div>    
+</div>
+<h2>Емоджи</h2>
+<div class="markdown-wrap">
+    <div class="markdown-code"><code>:grinning_face:</code>&#128512;</div>
+</div>
+<a href="https://emojipedia.org/" class="markdown-description">Всё id Емоджи можно найти здесь.</a>
+{% endblock %}

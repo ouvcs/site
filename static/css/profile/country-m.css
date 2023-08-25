@@ -1,0 +1,173 @@
+input, textarea, select {
+    width: 90%;
+    text-align: center;
+    vertical-align: middle;
+    background: none;
+    background-color: var(--cl-e);
+    border: 0vh;
+    color: var(--cl-p);
+    border-radius: 20px;
+    padding: 0.5vh 0vw;
+    margin: 0.1vw;
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+input:invalid {
+    border: 1px solid #c55959;
+    background-color: #c55959;
+}
+
+textarea {
+    text-align: start;
+    resize: vertical;
+    transition: height 0s;
+}
+
+::placeholder {
+    color: var(--cl-i);
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+#submit {
+    margin: 1vh 10%;
+    background-color: var(--cl-p);
+    padding: 2vh 1vw;
+    color: var(--cl-q);
+    cursor: pointer;
+    width: 80%;
+    height: 7%;
+    border-radius: 20px;
+}
+
+#submit:hover {
+    border-radius: 10px;
+}
+
+#wrapper {
+    width: calc(100%-4vw);
+    height: 85vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 1vh 2vw;
+    color: var(--cl-p);
+}
+
+form {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    color: var(--cl-p);
+}
+
+#country-side {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--cl-w);
+    padding: 1%;
+    border-radius: 20px;
+}
+
+#country-flag {
+    border-radius: 20px;
+    border: 2.5px solid var(--cl-y);
+    aspect-ratio: 1/1;
+    margin-bottom: 1vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+#country-id {
+    color: var(--cl-i);
+    background-color: var(--cl-e);
+    height: 10%;
+    width: 75%;
+}
+
+#country-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+}
+
+#country-date, #country-goverment, #country-political-type, #country-ideology {
+    font-size: 0.95em;
+    padding: 0.5vh 2vw;
+    background-color: var(--cl-e);
+    border-radius: 20px;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+#country-date {
+    width: 80%;
+}
+
+#country-goverment {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 0;
+}
+
+#country-political-type div, #country-ideology div {
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+#country-desc-wrapper {
+    width: 100%;
+    min-height: 80vh;
+    background-color: var(--cl-q);
+    padding: 1%;
+    border-radius: 20px;
+    font-size: 0.9em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+#country-name-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95em;
+}
+
+#country-name {
+    font-size: 1em;
+    width: 100%;
+}
+
+#country-name-check {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+#country-description {
+    width: 90%;
+    padding: 1vh 1vw;
+    min-height: 57.5vh;
+}

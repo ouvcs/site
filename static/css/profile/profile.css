@@ -1,0 +1,166 @@
+#profile {
+    width: 98%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    margin: 1%;
+}
+
+#profile > * {
+    color: var(--cl-p);
+}
+
+#current {
+    width: 60vw;
+    height: 24vh;
+    overflow: hidden;
+    background-color: var(--cl-w);
+    border-radius: 20px;
+    color: var(--cl-p);
+}
+
+#current-wrapper {
+    width: 180vw;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    color: var(--cl-p);
+}
+
+#current-wrapper > * {
+    width: 60vw;
+    height: 100%;
+    color: var(--cl-p);
+}
+
+#profile-minus, #profile-plus {
+    width: 2.5%;
+    aspect-ratio: 1/1;
+    border: 0px solid black;
+    border-bottom: 1px solid var(--cl-p);
+    border-right: 1px solid var(--cl-p);
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: var(--cl-q);
+}
+
+#profile-minus:disabled, #profile-plus:disabled {
+    border-bottom: 1px solid var(--cl-u);
+    border-right: 1px solid var(--cl-u);
+    cursor: not-allowed;
+}
+
+#profile-minus {
+    transform: rotateZ(135deg);
+}
+
+#profile-plus {
+    transform: rotateZ(-45deg);
+}
+
+#profile-current, #country-current, #valute-current {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+#user-photo {
+    aspect-ratio: 1/1;
+    height: 80%;
+    border-radius: 50%;
+}
+
+#country-flag {
+    aspect-ratio: 3/2;
+    height: 80%;
+    border-radius: 20px;
+}
+
+#valute-photo {
+    aspect-ratio: 2/1;
+    height: 80%;
+    border-radius: 20px;
+}
+
+#user-info, #country-info, #valute-info {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--cl-p);
+}
+
+#user-name, #country-name, #valute-name {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--cl-p);
+}
+
+#auth-current {
+    width: 33.3%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--cl-p);
+}
+
+#vk-auth-wrapper {
+    height: 130px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#settings {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#settings > * {
+    background-color: var(--cl-w);
+    color: var(--cl-p);
+    margin: 2vh 1%;
+    width: 18%;
+    height: 4vw;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid var(--cl-w);
+    border-radius: 10px;
+    outline: 5px solid var(--cl-q);
+}
+
+#settings > * > option {
+    color: var(--cl-p);
+    background-color: var(--cl-w);
+}
+
+#user-banned, #user-moderation {
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+#user-banned {
+    color: #AE0000;
+}
+
+#user-moderation {
+    color: #0000AE;
+}
+
+#user-admin {
+    color: #00AE00;
+}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}{% if preview %}Предпросмотр{% else %}Страна{% endif %}{% endblock %}
+
+{% block links %}
+<link rel="stylesheet" href="/static/css/countries/country.css">
+{% endblock %}
+
+{% block body %}
+<div id="country-side">
+    <img src="{{ country['flag'] }}" alt="flag" id="country-flag">
+    <div id="country-id">{{ country['cid'] }}</div>
+    <div id="country-ruler">
+        <img src="{{ ruler['photo'] }}" alt="photo" id="country-ruler-photo">
+        <div id="country-ruler-name">
+            <div>Правитель</div>
+            <a id="country-ruler-name" href="https://vk.com/write{{ ruler['id'] }}">{{ ruler['name'] }}</a>
+        </div>
+    </div>
+    <div id="country-info">
+        <div id="country-date">Основана {{ country['date'] }}</div>
+        <div id="country-goverment">{{ country['goverment_form'] }} {{ country['goverment_type'] }}</div>
+        <div id="country-political-type"><span>Политический режим</span><div>{{ country['political_type'] }}</div></div>
+        <div id="country-ideology"><span>Идеология</span><div>{{ country['ideology'] }}</div></div>
+    </div>      
+</div>
+<div id="country-desc-wrapper">
+    <div id="country-name-wrapper">
+        <h1 id="country-name"><a href="{{ country['group'] }}">{{ country['name'] }}</a></h1>
+        <img src="/static/images/check/{{ country['check'] }}.png" alt="check" id="country-name-check">
+        <div id="country-add">{{ country['add']|safe }}</div>
+    </div>
+    <div id="country-description">{{ country['desc']|safe }}</div>
+</div>
+{% endblock %}

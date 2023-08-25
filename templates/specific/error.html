@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}{% if error %}Ошибка{% else %}Уведомление{% endif %}{% endblock %}
+
+{% block links %}
+<link rel="stylesheet" href="/static/css/specific/error.css?ver={{ VERSION }}">
+{% endblock %}
+
+{% block body %}
+<div id="error">
+    {% if error %}
+        <div id="error-code">
+            <div class="error-code-element" style="font-size: 0px;">{{ error[0] }}</div>
+            <div class="error-code-element" style="font-size: 0px;">{{ error[1] }}</div>
+            <div class="error-code-element" style="font-size: 0px;">{{ error[2] }}</div>
+        </div>    
+    {% else %}
+        <div id="error-code">
+            <div class="error-message" style="font-size: 0px;">{{ message }}</div>
+        </div>
+    {% endif %}
+    <div id="error-under" style="transform: scale(0);">    
+        {% if error %}<div id="error-description">{{ description }}</div>{% endif %}
+        {% if error == "418" %}
+            <a href="/countries/" id="error-return">Приготовить кофе</a>
+        {% else %}
+            <a href="/countries/" id="error-return">Вернуться</a>
+        {% endif %}
+    </div>
+</div>
+
+<script>
+    async function error_anim() {
+        await new Promise(r => setTimeout(r, 1000));
+        document.querySelectorAll(".error-code-element").forEach(function(e) {
+            e.style.fontSize = "";
+        });
+        document.querySelectorAll(".error-message").forEach(function(e) {
+            e.style.fontSize = "";
+        });
+        await new Promise(r => setTimeout(r, 750));
+        document.querySelector("#error-under").style.transform = "";
+    };
+    error_anim();
+</script>
+{% endblock %}

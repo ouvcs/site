@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Редакция{% endblock %}
+
+{% block links %}
+<link rel="stylesheet" href="/static/css/valutes/valute.css?ver={{ VERSION }}">
+<link rel="stylesheet" href="/static/css/valutes/valute-m.css?ver={{ VERSION }}">
+{% endblock %}
+
+{% block body %}
+<form id="valute" action="/profile/edit/valute/" method="post">
+    <div id="valute-side">
+        <div id="valute-side-mobile-left">
+            <input type="text" placeholder="Ссылка на фото" id="valute-photo" autocomplete="off" name="photo" maxlength="250" value="{% if object['id'] != '000000000' %}{{ object['photo'] }}{% endif %}" required>
+            <div id="valute-id"><span id="vid"><input type="text" placeholder="Краткое имя валюты" id="vid" name="vid" maxlength="50" pattern="^[a-z]*$" value="{% if object['id'] != '000000000' %}{{ object['vid'] }}{% endif %}" required></span> | <span id="uid">{{ object['id'] }}</span></div>
+        </div>
+        <div id="valute-side-mobile-right">
+            <div id="valute-name-wrapper">
+                <h1 id="valute-name"><input type="text" placeholder="Название" id="valute-name-input" name="name" maxlength="250" value="{% if object['id'] != '000000000' %}{{ object['name'] }}{% endif %}" required></h1>
+                <img src="/static/images/check/query.png" alt="check" id="valute-name-check">
+                <div id="valute-add">{{ object['add']|safe }}</div>
+            </div>
+            <div id="valute-description"><textarea id="valute-description-input" rows="4" cols="50" placeholder="Описание" name="desc">{% if object['id'] != '000000000' %}{{ object['desc']|safe }}{% endif %}</textarea></div>
+        </div>       
+    </div>
+    <div id="valute-change-wrapper">
+        <div class="valute-change">
+            <div class="valute-change-body">
+                <div class="valute-abbreviation"><input type="text" placeholder="Сокращение валюты" id="valute-abbreviation-input" name="abbreviation" pattern="^[A-Z]{3}$" maxlength="3" value="{% if object['id'] != '000000000' %}{{ object['abbreviation'] }}{% endif %}" required>/RUB</div>
+                <div class="valute-change-value-wrapper">
+                    <div class="valute-change-value"><input type="number" step="0.01" placeholder="Курс валюты" id="valute-valute-input" name="change" value="{% if object['id'] != '000000000' %}{{ object['change'] }}{% endif %}" required></div>
+                </div>
+                <div class="valute-change-percent-wrapper">                    
+                    <img src="/static/images/change/none.png" alt="direction" class="valute-change-direction">
+                    <div class="valute-change-percent">0.0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="submit" id="submit">
+</form>
+
+<script src="/static/js/registry.js?ver={{ VERSION }}"></script>
+{% endblock %}

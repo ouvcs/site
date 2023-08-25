@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Профиль{% endblock %}
+
+{% block links %}
+<link rel="stylesheet" href="/static/css/profile/profile-m.css?ver={{ VERSION }}">
+
+<script src="https://vk.com/js/api/openapi.js?169" type="text/javascript"></script>
+{% endblock %}
+
+{% block body %}
+<div id="profile">
+    {% if session["id"] == "000000000" %}
+        <div id="auth-current"><div id="vk-auth-wrapper"><div id="vk-auth"></div></div></div>
+        <script>
+            VK.init({ apiId: {{ VK }} });
+            VK.Widgets.Auth("vk-auth", {authUrl: "/profile/login"});
+        </script>
+    {% else %}
+        <div id="profile-current">
+            <img id="user-photo" src="{{ user['photo'] }}">
+            <div id="user-info">
+                <div id="user-name">
+                    {{ user['name'] }}
+                    {% if session['banned'] %}
+                        <div id="user-banned">Забанен</div>
+                    {% elif session['moderation'] %}
+                        <div id="user-moderation">На Модерации</div>
+                    {% elif session['admin'] %}
+                        <div id="user-admin">Админ</div>
+                    {% endif %}</div>
+                <div id="user-id">{{ user['screen_name'] }}</div>
+                <a id="user-logout" href="/profile/logout/">Выйти</a>
+            </div>
+        </div>
+        <div id="country-current">
+            <img id="country-flag" src="{{ country['flag'] }}">
+            <div id="country-info">
+                <div id="country-name">{{ country['name'] }}</div>
+                <div id="country-id">{{ country['cid'] }}</div>
+            </div>
+        </div>
+        <div id="valute-current">
+            <img id="valute-photo" src="{{ valute['photo'] }}">
+            <div id="valute-info">
+                <div id="valute-name">{{ valute['name'] }}</div>
+                <div id="valute-id">{{ valute['vid'] }}</div>
+            </div>
+        </div>
+    {% endif %}
+</div>
+<div id="settings">
+    <select id="theme" current="{{ request.cookies.get("theme") }}">
+        <optgroup label="Стандартные">
+            <option value="light">Светлая</option>
+            <option value="dark">Тёмная</option>
+        </optgroup>
+        <optgroup label="Пользовательские">
+        </optgroup>
+        <option value="tea" disabled hidden>Чайная</option>
+        <option value="coffee" disabled hidden>Кофейная</option>
+        <option value="tea-dark" disabled hidden>Тёмно-чайная</option>
+    </select>
+</div>
+
+<script src="/static/js/profile.js?ver={{ VERSION }}"></script>
+<script src="/static/js/ratios.js?ver={{ VERSION }}"></script>
+{% endblock %}

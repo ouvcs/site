@@ -1,0 +1,18 @@
+body {
+    --cl-q: #a9d6e5;                /*###################*/
+    --cl-w: #89c2d9;                /*                   */
+    --cl-e: #61a5c2;                /*                   */
+    --cl-r: #468faf;                /*                   */
+    --cl-t: #2c7da0;                /*  Standart Colors  */
+    --cl-y: #2a6f97;                /*                   */
+    --cl-u: #014f86;                /*                   */
+    --cl-i: #01497c;                /*                   */
+    --cl-o: #013a63;                /*                   */
+    --cl-p: #012a4a;                /*###################*/
+
+    --cl-error: #176894;            /*###################*/
+    --cl-error-hv: #134f8b;         /*    Error Colors   */
+    --cl-error-return: #b1d8ff;     /*###################*/
+}
+
+/* Color Scheme: https://coolors.co/ffffff-edeef0-b2b3b4-959596-868687-777778-696969-5a5a5a-3c3c3c-000000 */

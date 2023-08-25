@@ -1,0 +1,28 @@
+@media (max-width: 768px) {
+    input, textarea, select {
+        width: 90%;
+    }
+
+    #submit {
+        width: 95vw;
+    }
+
+    #valute {
+        width: 97.7vw !important;
+    }
+
+    #valute-name-input {
+        font-size: 0.8em;
+        width: 85vw;
+    }
+}
+
+@media (max-width: 484px) {
+    #valute-name-input {
+        width: 80vw;
+    }
+
+    #valute {
+        width: 95vw !important;
+    }
+}

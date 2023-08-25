@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Страны{% endblock %}
+
+{% block links %}
+<link rel="stylesheet" href="/static/css/countries/countries-m.css">
+{% endblock %}
+
+{% block body %}
+{%for country in countries %}
+    <div class="country" style="transform: scale(0);">
+        <img src="{{ country['flag'] }}" class="country-flag" alt="Изображение отсутствует">
+        <div class="country-info">
+            <div class="country-name">
+                <a href="{{ country['group'] }}">{{ country['name'] }}</a>
+                <img src="/static/images/check/{{ country['check'] }}.png?ver={{ VERSION }}" alt="Чек" class="check">
+                <div class="country-add">{{ country['add']|safe }}</div>
+            </div>
+            <div class="country-description">{{ country['desc']|safe }}</div>
+            <a href="/countries/country/{{ country['cid'] }}" class="country-about">
+                Подробнее
+            </a>
+        </div>
+    </div>
+{% endfor %}
+
+<script src="/static/js/ratios.js?ver={{ VERSION }}"></script>
+<script>
+    document.querySelectorAll(".country").forEach(function(e) {
+        if (e.getBoundingClientRect().top <= window.pageYOffset+window.innerHeight) {
+            e.style.transform = "";
+        }
+    });
+    document.body.onscroll = function() {
+        document.querySelectorAll(".country").forEach(function(e) {
+            if (e.getBoundingClientRect().top <= window.pageYOffset+window.innerHeight) {
+                e.style.transform = "";
+            }
+        });
+    };
+</script>
+{% endblock %}

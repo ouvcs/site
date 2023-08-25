@@ -1,0 +1,113 @@
+#wrapper {
+    width: calc(100%-4vw);
+    height: 85vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    margin: 1vh 2vw;
+    color: var(--cl-p);
+}
+
+#country-side {
+    width: 25%;
+    height: 80vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--cl-w);
+    padding: 1%;
+    border-radius: 20px;
+}
+
+#country-flag {
+    border-radius: 20px;
+    width: 90%;
+    background-size: cover;
+    border: 2.5px solid var(--cl-y);
+    aspect-ratio: 3/2;
+}
+
+#country-id {
+    color: var(--cl-i);
+} 
+
+#country-ruler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1% 0%;
+}
+
+#country-ruler-photo {
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    margin-right: 3vw;
+}
+
+#country-ruler-name {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+#country-ruler-name div {
+    font-weight: bold;
+}
+
+#country-info {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+#country-date, #country-goverment, #country-political-type, #country-ideology {
+    font-size: 0.95em;
+    margin-bottom: 1vh;
+    padding: 0.5vh 2vw;
+    background-color: var(--cl-e);
+    border-radius: 20px;
+    width: 80%;
+    height: 6.6vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+#country-political-type div, #country-ideology div {
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+#country-desc-wrapper {
+    width: 68%;
+    min-height: 80vh;
+    background-color: var(--cl-q);
+    padding: 1%;
+    border-radius: 20px;
+    font-size: 0.9em;
+}
+
+#country-name-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 0.95em;
+}
+
+#country-name-wrapper>* {
+    margin-right: 10px;
+}
+
+#country-name-check, #country-add>* {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}

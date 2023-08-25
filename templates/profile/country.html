@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}Редакция{% endblock %}
+
+{% block links %}
+<link rel="stylesheet" href="/static/css/profile/country.css">
+{% endblock %}
+
+{% block body %}
+<form action="/profile/country/send" method="post">
+    <div id="country-side">
+        <input type="text" name="flag" id="country-flag" placeholder="Ссылка на флаг" pattern="^(http(s)?:\/\/)?(.)+\.(png|jpg|jpeg)(\?.*)?$" value="{{ country['flag'] }}" required>
+        <input type="text" name="cid" id="country-id" placeholder="Короткий ID страны" pattern="^([a-z]){2,30}$" value="{{ country['cid'] }}" required>
+        <div id="country-info">
+            <input type="text" name="date" id="country-date" pattern="^\d\d\.\d\d\.\d\d\d\d$" value="{{ country['date'] }}" required>
+            <div id="country-goverment">
+                <select name="goverment_form" id="country-goverment-form">
+                <option value="Унитарная" {% if country['goverment_form'] == 'Унитарная' %}selected{% endif %}>Унитарная</option>
+                <option value="Федеративная" {% if country['goverment_form'] == 'Федеративная' %}selected{% endif %}>Федеративная</option>
+                <option value="Конфедеративная" {% if country['goverment_form'] == 'Конфедеративная' %}selected{% endif %}>Конфедеративная</option>
+                </select>
+                <select name="goverment_type" id="country-goverment-type">
+                <option value="Президентская респубика" {% if country['goverment_type'] == 'Президентская респубика' %}selected{% endif %}>Президентская респубика</option>
+                <option value="Смешанная респубика" {% if country['goverment_type'] == 'Смешанная респубика' %}selected{% endif %}>Смешанная респубика</option>
+                <option value="Парламентская респубика" {% if country['goverment_type'] == 'Парламентская респубика' %}selected{% endif %}>Парламентская респубика</option>
+                <option value="Парламентская монархия" {% if country['goverment_type'] == 'Парламентская монархия' %}selected{% endif %}>Парламентская монархия</option>
+                <option value="Дуалистическая монархия" {% if country['goverment_type'] == 'Дуалистическая монархия' %}selected{% endif %}>Дуалистическая монархия</option>
+                <option value="Абсолютная монархия" {% if country['goverment_type'] == 'Абсолютная монархия' %}selected{% endif %}>Абсолютная монархия</option>
+                <option value="Однопартийная система" {% if country['goverment_type'] == 'Однопартийная система' %}selected{% endif %}>Однопартийная система</option>
+                <option value="Военная диктатура" {% if country['goverment_type'] == 'Военная диктатура' %}selected{% endif %}>Военная диктатура</option>
+                </select>
+            </div>
+            <select name="political_type" id="country-political-type">
+            <option value="Демократический" {% if country['political_type'] == 'Демократический' %}selected{% endif %}>Демократический</option>
+            <option value="Гибридный" {% if country['political_type'] == 'Гибридный' %}selected{% endif %}>Гибридный</option>
+            <option value="Авторитарный" {% if country['political_type'] == 'Авторитарный' %}selected{% endif %}>Авторитарный</option>
+            <option value="Тоталитарный" {% if country['political_type'] == 'Тоталитарный' %}selected{% endif %}>Тоталитарный</option>
+            <option value="Анархия" {% if country['political_type'] == 'Анархия' %}selected{% endif %}>Анархия</option>
+            </select>
+            <select name="ideology" id="country-ideology">
+            <option value="Отстуствует" {% if country['ideology'] == 'Отстуствует' %}selected{% endif %}>Отстуствует</option>
+            <option value="Анархизм" {% if country['ideology'] == 'Анархизм' %}selected{% endif %}>Анархизм</option>
+            <option value="Консерватизм" {% if country['ideology'] == 'Консерватизм' %}selected{% endif %}>Консерватизм</option>
+            <option value="Неоконсерватизм" {% if country['ideology'] == 'Неоконсерватизм' %}selected{% endif %}>Неоконсерватизм</option>
+            <option value="Либерализм" {% if country['ideology'] == 'Либерализм' %}selected{% endif %}>Либерализм</option>
+            <option value="Неолиберализм" {% if country['ideology'] == 'Неолиберализм' %}selected{% endif %}>Неолиберализм</option>
+            <option value="Либертарианство" {% if country['ideology'] == 'Либертарианство' %}selected{% endif %}>Либертарианство</option>
+            <option value="Меритократия" {% if country['ideology'] == 'Меритократия' %}selected{% endif %}>Меритократия</option>
+            <option value="Анархо-коммунизм" {% if country['ideology'] == 'Анархо-коммунизм' %}selected{% endif %}>Анархо-коммунизм</option>
+            <option value="Анархо-капитализм" {% if country['ideology'] == 'Анархо-капитализм' %}selected{% endif %}>Анархо-капитализм</option>
+            <option value="Монархизм" {% if country['ideology'] == 'Монархизм' %}selected{% endif %}>Монархизм</option>
+            <option value="Религиозный фундаментализм"" {% if country['ideology'] == 'Религиозный фундаментализм' %}selected{% endif %}>Религиозный фундаментализм</option>
+            <option value="Социальный дарвинизм"" {% if country['ideology'] == 'Социальный дарвинизм' %}selected{% endif %}>Социальный дарвинизм</option>
+            <option value="Социал-демократия"" {% if country['ideology'] == 'Социал-демократия' %}selected{% endif %}>Социал-демократия</option>
+            <option value="Социализм" {% if country['ideology'] == 'Социализм' %}selected{% endif %}>Социализм</option>
+            <option value="Коммунизм" {% if country['ideology'] == 'Коммунизм' %}selected{% endif %}>Коммунизм</option>
+            <option value="Фашизм" {% if country['ideology'] == 'Фашизм' %}selected{% endif %}>Фашизм</option>
+            <option value="Расизм" {% if country['ideology'] == 'Расизм' %}selected{% endif %}>Расизм</option>
+            <option value="Нацизм" {% if country['ideology'] == 'Нацизм' %}selected{% endif %}>Нацизм</option>
+            <option value="Национализм" {% if country['ideology'] == 'Национализм' %}selected{% endif %}>Национализм</option>
+            <option value="Шовинизм" {% if country['ideology'] == 'Шовинизм' %}selected{% endif %}>Шовинизм</option>
+            <option value="Гуманизм" {% if country['ideology'] == 'Гуманизм' %}selected{% endif %}>Гуманизм</option>
+            <option value="Феминизм" {% if country['ideology'] == 'Феминизм' %}selected{% endif %}>Феминизм</option>
+            <option value="Маскулизм" {% if country['ideology'] == 'Маскулизм' %}selected{% endif %}>Маскулизм</option>
+            <option value="Трансгуманизм" {% if country['ideology'] == 'Трансгуманизм' %}selected{% endif %}>Трансгуманизм</option>
+            <option value="Экологизм" {% if country['ideology'] == 'Экологизм' %}selected{% endif %}>Экологизм</option>
+            </select>
+        </div>      
+    </div>
+    <div id="country-desc-wrapper">
+        <div id="country-name-wrapper">
+            <h1>
+                <input type="text" name="name" id="country-name" placeholder="Название страны" minlength="3" maxlength="100" value="{{ country['name'] }}" required>
+                <input type="text" name="group" id="country-group" placeholder="Группа в ВК" pattern="^(http(s)?:\/\/)?vk\.com\/[a-zA-Z_]+$" value="{{ country['group'] }}" required>
+            </h1>
+        </div>
+        <textarea name="desc" id="country-description" placeholder="Описание">{{ country['desc']|safe }}</textarea>
+    </div>
+
+    <input type="submit" id="submit" value="Отправить">
+</form>
+
+<script src="/static/js/edit-country.js?ver={{ VERSION }}"></script>
+{% endblock %}

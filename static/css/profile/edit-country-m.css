@@ -1,0 +1,32 @@
+@media (max-width: 768px) {
+    input, textarea, select {
+        width: 90%;
+    }
+
+    #submit {
+        width: 95vw;
+    }
+
+    #country {
+        width: 97.7vw !important;
+    }
+
+    #country-name-input {
+        font-size: 0.8em;
+        width: 85vw;
+    }
+
+    #country-description-input {
+        width: 88vw;
+    }
+}
+
+@media (max-width: 484px) {
+    #country-name-input {
+        width: 80vw;
+    }
+
+    #country {
+        width: 95vw !important;
+    }
+}
