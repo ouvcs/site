@@ -1,1 +1,3 @@
-# OOVC test site repository
+# Сайт ООВГ
+
+https://oovg.vercel.app/
