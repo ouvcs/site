@@ -22,7 +22,7 @@ def api(method, params={}):
     response = requests.get(API_SITE+"/api"+method, params=params)
     try:
         response = response.json()
-        return response
+        return response["response"]
     except:
         return {"error": "Не удалось получить данные из API"}
     
