@@ -18,7 +18,7 @@ def valutes():
     else:
         response = api("/valutes/?search="+request.args.get("search"))
 
-    if response["error"]: 
+    if "error" in response: 
         abort(504)
 
     return render_template("/valutes/valutes.html", valutes=response)
@@ -28,7 +28,7 @@ def valute(id):
     response = api("/valutes/valute/"+id)
     response_ruler = api("/accounts/account/"+id)
 
-    if response["error"] or response_ruler["error"]: 
+    if "error" in response or "error" in response_ruler: 
         abort(504)
 
     return render_template("/valutes/valute.html", valute=response, ruler=response_ruler)
@@ -38,7 +38,7 @@ def preview(id):
     response = api("/valutes/preview/"+id)
     response_ruler = api("/accounts/account/"+id)
 
-    if response["error"] or response_ruler["error"]: 
+    if "error" in response or "error" in response_ruler: 
         abort(504)
 
     return render_template("/valutes/valute.html", valute=response, ruler=response_ruler,preview=True)
@@ -48,7 +48,7 @@ def changes(id):
     abort(303)
     response = api("/valutes/change/"+id)
 
-    if response["error"]: 
+    if "error" in response: 
         abort(504)
 
     return render_template("/valutes/changes.html", changes=response)
@@ -58,7 +58,7 @@ def change(fid, tid):
     abort(303)
     response = api("/valutes/change/"+fid+"/"+tid)
 
-    if response["error"]: 
+    if "error" in response: 
         abort(504)
         
     return render_template("/valutes/change.html", change=response)

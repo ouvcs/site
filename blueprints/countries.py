@@ -18,7 +18,7 @@ def countries():
     else:
         response = api("/countries/?search="+request.args.get("search"))
 
-    if response["error"]: 
+    if "error" in response: 
         abort(504)
         
     return render_template("/countries/countries.html", countries=response)
@@ -28,7 +28,7 @@ def country(id):
     response = api("/countries/country/"+id)
     response_ruler = api("/accounts/account/"+id)
 
-    if response["error"] or response_ruler["error"]: 
+    if "error" in response or "error" in response_ruler: 
         abort(504)
 
     return render_template("/countries/country.html", country=response, ruler=response_ruler)
@@ -38,7 +38,7 @@ def preview(id):
     response = api("/countries/preview/"+id)
     response_ruler = api("/accounts/account/"+id)
 
-    if response["error"] or response_ruler["error"]: 
+    if "error" in response or "error" in response_ruler: 
         abort(504)
 
     return render_template("/countries/country.html", country=response, ruler=response_ruler, preview=True)
