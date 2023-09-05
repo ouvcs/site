@@ -25,7 +25,7 @@ app.register_blueprint(bsettings, url_prefix="/settings")
 
 @app.route("/")
 def index():
-    if round(random.random(), 3) != 0.356:
+    if round(random.random(), 3) == 0.356:
         response = make_response(redirect("/error/"))
         
         if random.randint(0, 1) == 1:
