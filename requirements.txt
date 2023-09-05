@@ -1,17 +1,4 @@
-beautifulsoup4==4.12.2 ; python_version >= "3.11" and python_version < "4.0"
-certifi==2023.7.22 ; python_version >= "3.11" and python_version < "4"
-charset-normalizer==2.1.1 ; python_version >= "3.11" and python_version < "4"
-click==8.1.7 ; python_version >= "3.11" and python_version < "4.0"
-colorama==0.4.6 ; python_version >= "3.11" and python_version < "4.0" and platform_system == "Windows"
-Flask==2.2.2 ; python_version >= "3.11" and python_version < "4.0"
-idna==3.4 ; python_version >= "3.11" and python_version < "4"
-itsdangerous==2.1.2 ; python_version >= "3.11" and python_version < "4.0"
-jinja2==3.1.2 ; python_version >= "3.11" and python_version < "4.0"
-markdown==3.4.3 ; python_version >= "3.11" and python_version < "4.0"
-markdownify==0.11.6 ; python_version >= "3.11" and python_version < "4.0"
-markupsafe==2.1.3 ; python_version >= "3.11" and python_version < "4.0"
-requests==2.28.1 ; python_version >= "3.11" and python_version < "4"
-six==1.16.0 ; python_version >= "3.11" and python_version < "4.0"
-soupsieve==2.5 ; python_version >= "3.11" and python_version < "4.0"
-urllib3==1.26.16 ; python_version >= "3.11" and python_version < "4.0"
-werkzeug==2.3.7 ; python_version >= "3.11" and python_version < "4.0"
+Flask==2.2.2
+markdown==3.4.3
+markdownify==0.11.6
+requests==2.28.1
