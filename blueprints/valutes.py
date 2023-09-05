@@ -18,8 +18,8 @@ def valutes():
     else:
         response = api("/valutes/?search="+request.args.get("search"))
 
-    if not isinstance(response, dict) and not isinstance(response, list):
-        abort(500)
+    if response["error"]: 
+        abort(504)
 
     return render_template("/valutes/valutes.html", valutes=response)
 
@@ -27,8 +27,9 @@ def valutes():
 def valute(id):
     response = api("/valutes/valute/"+id)
     response_ruler = api("/accounts/account/"+id)
-    if not isinstance(response, dict) and not isinstance(response, list):
-        abort(500)
+
+    if response["error"] or response_ruler["error"]: 
+        abort(504)
 
     return render_template("/valutes/valute.html", valute=response, ruler=response_ruler)
 
@@ -36,23 +37,28 @@ def valute(id):
 def preview(id):
     response = api("/valutes/preview/"+id)
     response_ruler = api("/accounts/account/"+id)
-    if not isinstance(response, dict) and not isinstance(response, list):
-        abort(500)
+
+    if response["error"] or response_ruler["error"]: 
+        abort(504)
 
     return render_template("/valutes/valute.html", valute=response, ruler=response_ruler,preview=True)
 
 @bvalutes.route("/changes/<id>/")
 def changes(id):
+    abort(303)
     response = api("/valutes/change/"+id)
-    if not isinstance(response, dict) and not isinstance(response, list):
-        abort(500)
+
+    if response["error"]: 
+        abort(504)
 
     return render_template("/valutes/changes.html", changes=response)
 
 @bvalutes.route("/changes/<fid>/<tid>/")
 def change(fid, tid):
+    abort(303)
     response = api("/valutes/change/"+fid+"/"+tid)
-    if not isinstance(response, dict) and not isinstance(response, list):
-        abort(500)
+
+    if response["error"]: 
+        abort(504)
         
     return render_template("/valutes/change.html", change=response)

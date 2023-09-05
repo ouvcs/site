@@ -18,9 +18,9 @@ def countries():
     else:
         response = api("/countries/?search="+request.args.get("search"))
 
-    if not isinstance(response, dict) and not isinstance(response, list):
-        abort(500)
-
+    if response["error"]: 
+        abort(504)
+        
     return render_template("/countries/countries.html", countries=response)
 
 @bcountries.route("/country/<id>/")
@@ -28,8 +28,8 @@ def country(id):
     response = api("/countries/country/"+id)
     response_ruler = api("/accounts/account/"+id)
 
-    if not isinstance(response, dict) and not isinstance(response, list):
-        abort(500)
+    if response["error"] or response_ruler["error"]: 
+        abort(504)
 
     return render_template("/countries/country.html", country=response, ruler=response_ruler)
 
@@ -37,8 +37,8 @@ def country(id):
 def preview(id):
     response = api("/countries/preview/"+id)
     response_ruler = api("/accounts/account/"+id)
-    
-    if not isinstance(response, dict) and not isinstance(response, list):
-        abort(500)
+
+    if response["error"] or response_ruler["error"]: 
+        abort(504)
 
     return render_template("/countries/country.html", country=response, ruler=response_ruler, preview=True)

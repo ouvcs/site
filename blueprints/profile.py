@@ -50,12 +50,14 @@ def logout():
 
 @bprofile.route("/country/")
 def country():
+    abort(303)
     response = api("/accounts/full/"+session["id"])
     return render_template("/profile/edit-country.html", ruler=response["account"], country=response["country"])
 
 
 @bprofile.route("/country/send/", methods=["GET", "POST"])
 def country_send():
+    abort(303)
     args = {}
     
     args["id"] = session["id"]
@@ -75,8 +77,3 @@ def country_send():
 
     response = api("/edit/countries/", args)
     return render_template("specific/error.html", message=response)
-
-@bprofile.route("/checklink/")
-def checklink():
-    response = str(requests.get(request.args.get("link")).status_code)
-    return flask.Response(response=response, status=200, mimetype="text/plain")

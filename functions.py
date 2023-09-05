@@ -13,29 +13,18 @@ VK = os.environ.get("vk")
 VK_SECRET = os.environ.get("vk_secret")
 KEY = os.environ.get("key")
 
-if SERVER_VERSION == None:
-    with open("variables.json", "r", encoding="utf-8") as f:
-        read = json.loads(f.read())
-        SERVER_VERSION = read["server_version"]
-        SECRET_KEY = read["secret_key"]
-        VK = read["vk"]
-        API_SITE = read["api_site"]
-        VK_SECRET = read["vk_secret"]
-        KEY = read["key"]
-
 def render_template(name, **kwargs):
     kwargs["VERSION"] = SERVER_VERSION
     kwargs["API_SITE"] = API_SITE
     return flask.render_template(name, **kwargs)
 
 def api(method, params={}):
-    response = requests.get(API_SITE+method, params=params)
+    response = requests.get(API_SITE+"/api"+method, params=params)
     try:
         response = response.json()
         return response
     except:
-        response = response.text
-        return response
+        return {"error": "Не удалось получить данные из API"}
     
 HTTP_STATUS_CODES = {
     100: "Продолжайте",
