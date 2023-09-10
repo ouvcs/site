@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "site"
+name = "ouvc-site"
 version = "0.1"
 description = "The site of OUVC."
 authors = ["Matvey Buldakov <m.buldakov10min@gmail.com>"]
